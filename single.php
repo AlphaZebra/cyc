@@ -69,7 +69,7 @@ $excludeid = get_the_ID();
     // change banner image to generic banners for whitepapers, data sheets, videos, and infographics 
     // 6/1/2023 RR / PeakZebra
     
-    if( $category->term_id != 1 ) {
+    if( $category->term_id != 1 && $category->term_id != 17 && $category->term_id != 5) {
         $image = content_url() . '/uploads/2023/06/cycuity-blue-diamond-grid.png';
         if( $category->term_id == 4) { // white paper
             $header_text = 'White Paper';
