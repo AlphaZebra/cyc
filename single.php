@@ -67,21 +67,33 @@ $excludeid = get_the_ID();
     $thumbnail = wp_get_attachment_image_src(get_post_thumbnail_id($postid), 'large');
     $image = $thumbnail[0];
     // change banner image to generic banners for whitepapers, data sheets, videos, and infographics 
-    // 6/1/2023 RR / PeakZebra
-    
-    if( $category->term_id != 1 && $category->term_id != 17 && $category->term_id != 5) {
+   
+	
+    if( $category->term_id != 1  ) {  // blog, press, or news
         $image = content_url() . '/uploads/2023/06/cycuity-blue-diamond-grid.png';
         if( $category->term_id == 4) { // white paper
+            // $image = content_url() . '/uploads/2023/06/cycuity-blue-diamond-grid.png';
             $header_text = 'White Paper';
         }
         if( $category->term_id == 40) { // infographic
+            // $image = content_url() . '/uploads/2023/05/cycuity-resource-infographic-id40.png';
             $header_text = 'Infographic';
         }
         if( $category->term_id == 41) { // fact sheet
+            // $image = 'https://cycuity.flywheelstaging.com/wp-content/uploads/2022/08/320x132_CycuityLogo-copy.png';
             $header_text = 'Fact Sheet';
         }
         if( $category->term_id == 6) { // video
+            // $image = 'https://cycuity.flywheelstaging.com/wp-content/uploads/2022/08/320x132_CycuityLogo-copy.png';
             $header_text = 'Video';
+        }
+        if( $category->term_id == 23) { // news
+            $image = 'http://cycuity.flywheelstaging.com/wp-content/uploads/2023/06/cycuity-tertiary-blue-news-bg.png';
+            $header_text = 'News';
+        }
+        if( $category->term_id == 42) { // news
+            $image = 'http://cycuity.flywheelstaging.com/wp-content/uploads/2023/06/cycuity-tertiary-blue-news-bg.png';
+            $header_text = 'Press';
         }
         
     }
